@@ -7,13 +7,21 @@ public class Ejercicio03 {
                 {"3", "5", "10", "0", "1", "10", "4"}
         };
 
+        // a
         System.out.println("Media de partes: " + mediaPartes(partes));
+
+        // b
         System.out.println("Nombres con mas partes: " + nombresConMasPartes(partes));
+
+        // c
+        System.out.println("Posicion de Jenni: " + encontrar(partes,"Jenni"));
+        System.out.println("Posicion de Tomas: " + encontrar(partes,"Tomas"));
+
+        //d
         System.out.println("Partes de Jenni: " + partesDe(partes, "Jenni"));
         System.out.println("Partes de Tomas: " + partesDe(partes, "Tomas"));
 
     }
-
 
     // a
     private static float mediaPartes(String[][] partes) {
@@ -52,15 +60,6 @@ public class Ejercicio03 {
     }
 
     // c
-    private static String partesDe(String[][] partes, String nombre) {
-
-        int posicion = encontrar(partes, nombre);
-
-        if (posicion == -1) return "No se encuentra " + nombre + " en el array.";
-
-        return partes[1][posicion];
-    }
-
     private static int encontrar(String[][] partes, String nombre) {
 
         boolean encontrado = false;
@@ -75,5 +74,14 @@ public class Ejercicio03 {
         return (encontrado) ? i : -1;
     }
 
+    // d
+    private static String partesDe(String[][] partes, String nombre) {
+
+        int posicion = encontrar(partes, nombre);
+
+        if (posicion == -1) return "No se encuentra " + nombre + " en el array.";
+
+        return partes[1][posicion];
+    }
 
 }
