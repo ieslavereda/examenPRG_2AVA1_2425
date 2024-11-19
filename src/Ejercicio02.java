@@ -35,7 +35,7 @@ public class Ejercicio02 {
     }
 
     public static int sumaNitera(int[] array, int pos, int ini, int rango){
-        int tamanyo = (rango>=array.length-1)? (array.length-1) : rango;
+        int tamanyo = Math.min(rango, (array.length - 1));
         int suma = 0;
         for (int i = ini; i <= tamanyo; i++) {
             suma += array[i];
