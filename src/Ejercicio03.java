@@ -33,10 +33,9 @@ public class Ejercicio03 {
     private static String nombresConPartes(String[][] partes, int cantidadPartes) {
         String nombres = "";
 
-        for (int i = 0; i < partes[1].length; i++) {
+        for (int i = 0; i < partes[1].length; i++)
             if (Integer.parseInt(partes[1][i]) == cantidadPartes)
                 nombres += partes[0][i] + " ";
-        }
 
         return nombres;
     }
