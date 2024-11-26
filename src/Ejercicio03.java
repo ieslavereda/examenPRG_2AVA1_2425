@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Ejercicio03 {
 
     public static void main(String[] args) {
@@ -12,6 +14,9 @@ public class Ejercicio03 {
 
         // b
         System.out.println("Nombres con mas partes: " + nombresConMasPartes(partes));
+        System.out.println("Nombres con mas partes: " + Arrays.toString(nombresConMasPartesArray(partes)));
+        System.out.println("Nombres con mas partes: " + Arrays.toString(nombresConMasPartesArray2(partes)));
+
 
         // c
         System.out.println("Posicion de Jenni: " + encontrar(partes,"Jenni"));
@@ -36,6 +41,34 @@ public class Ejercicio03 {
     // b
     private static String nombresConMasPartes(String[][] partes) {
         return nombresConPartes(partes, maxCantidadPartes(partes));
+    }
+
+    private static String[] nombresConMasPartesArray(String[][] partes) {
+        String nombres = nombresConPartes(partes, maxCantidadPartes(partes));
+        return nombres.split(" ");
+    }
+
+    private static String[] nombresConMasPartesArray2(String[][] partes) {
+        String[] alumnosMaxPartes = new String[contarAlumnosConMaximosPartes(partes, maxCantidadPartes(partes))];
+        nombresConPartes(partes, maxCantidadPartes(partes), alumnosMaxPartes);
+        return alumnosMaxPartes;
+    }
+
+    private static int contarAlumnosConMaximosPartes(String[][] partes, int cantidadPartes){
+        int cantidad = 0;
+
+        for (int i = 0; i < partes[1].length; i++)
+            if (Integer.parseInt(partes[1][i]) == cantidadPartes)
+                cantidad++;
+
+        return cantidad;
+    }
+
+    private static void nombresConPartes(String[][] partes, int cantidadPartes, String[] alumnosMaxPartes) {
+        int cont=0;
+        for (int i = 0; i < partes[1].length; i++)
+            if (Integer.parseInt(partes[1][i]) == cantidadPartes)
+                alumnosMaxPartes[cont++] = partes[0][i];
     }
 
     private static String nombresConPartes(String[][] partes, int cantidadPartes) {
