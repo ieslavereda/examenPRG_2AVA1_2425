@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class Ejercicio05 {
     public static void main(String[] args) {
@@ -22,5 +23,6 @@ public class Ejercicio05 {
             array[array.length-i-1] = aux;
         }
     }
+
 
 }

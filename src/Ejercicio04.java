@@ -5,6 +5,9 @@ public class Ejercicio04 {
         int[][] matriz = dibujaCruz(5);
         for (int[] array:matriz)
             System.out.println(Arrays.toString(array));
+        matriz = dibujaCruz(6);
+        for (int[] array:matriz)
+            System.out.println(Arrays.toString(array));
     }
 
     public static int[][] dibujaCruz(int numero){
